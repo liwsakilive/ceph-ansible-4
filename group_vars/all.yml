@@ -95,11 +95,11 @@ grafana_server_group_name: grafana-server
 
 # Enable the ntp service by default to avoid clock skew on ceph nodes
 # Disable if an appropriate NTP client is already installed and configured
-ntp_service_enabled: true
+ntp_service_enabled: false
 
 # Set type of NTP client daemon to use, valid entries are chronyd, ntpd or timesyncd
 # Note that this selection is currently ignored on containerized deployments
-ntp_daemon_type: chronyd
+ntp_daemon_type: ntpd
 
 
 # Set uid/gid to default '64045' for bootstrap directories.
@@ -154,15 +154,15 @@ ceph_mirror: http://download.ceph.com
 ceph_origin: repository
 ceph_repository: community
 ceph_stable: true
-ceph_stable_key: https://download.ceph.com/keys.release.asc
+#ceph_stable_key: https://download.ceph.com/keys.release.asc
 ceph_stable_release: nautilus
-ceph_stable_repo: "{{ ceph_mirror }}/debian-{{ ceph_stable_release }}"
+#ceph_stable_repo: "{{ ceph_mirror }}/debian-{{ ceph_stable_release }}"
 upgrade_ceph_packages: True
 
 
   
 #ceph_mirror: http://download.ceph.com
-#ceph_stable_key: https://download.ceph.com/keys/release.asc
+ceph_stable_key: https://download.ceph.com/keys/release.asc
 #ceph_stable_release: dummy
 #ceph_stable_repo: "{{ ceph_mirror }}/debian-{{ ceph_stable_release }}"
 
@@ -281,17 +281,20 @@ upgrade_ceph_packages: True
 cluster: ceph
 ceph_conf_key_directory: /etc/ceph
 fetch_directory: fetch/
-ntp_service_enabled: true
+#ntp_service_enabled: true
 configure_firewall: false
-monitor_interface: ens3
+#monitor_interface: eth0
 
+monitor_address_block: "10.148.0.0/24"
 radosgw_address_block: "10.148.0.0/24"
 public_network: "10.148.0.0/24"
 cluster_network: "10.148.0.0/24"
 
-
 #fsid: "{{ cluster_uuid.stdout }}"
 #generate_fsid: true
+fsid: "{{ foo|magical_fsid_generating_filter }}"
+#generate_fsid: false
+fsid: 36460d08-feb6-4fe1-9c5a-b8b8e45ba16a
 
 #ceph_conf_key_directory: /etc/ceph
 
