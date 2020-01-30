@@ -287,12 +287,12 @@ configure_firewall: false
 
 monitor_address_block: "10.148.0.0/24"
 radosgw_address_block: "10.148.0.0/24"
-public_network: "0.0.0.0"
+public_network: "10.148.0.0/24"
 cluster_network: "10.148.0.0/24"
 
 #fsid: "{{ cluster_uuid.stdout }}"
 #generate_fsid: true
-fsid: "{{ foo|magical_fsid_generating_filter }}"
+#fsid: "{{ foo|magical_fsid_generating_filter }}"
 #generate_fsid: false
 fsid: 36460d08-feb6-4fe1-9c5a-b8b8e45ba16a
 
@@ -301,7 +301,7 @@ fsid: 36460d08-feb6-4fe1-9c5a-b8b8e45ba16a
 # Permissions for keyring files in /etc/ceph
 #ceph_keyring_permissions: '0600'
 
-#cephx: true
+cephx: true
 
 ## Client options
 #
@@ -367,32 +367,32 @@ fsid: 36460d08-feb6-4fe1-9c5a-b8b8e45ba16a
 ##########
 # CEPHFS #
 ##########
-#cephfs: cephfs # name of the ceph filesystem
-#cephfs_data_pool:
-#  name: "{{ cephfs_data if cephfs_data is defined else 'cephfs_data' }}"
-#  pg_num: "{{ osd_pool_default_pg_num }}"
-#  pgp_num: "{{ osd_pool_default_pg_num }}"
-#  rule_name: "replicated_rule"
-#  type: 1
-#  erasure_profile: ""
-#  expected_num_objects: ""
-#  application: "cephfs"
-#  size: "{{ osd_pool_default_size }}"
-#  min_size: "{{ osd_pool_default_min_size }}"
-#cephfs_metadata_pool:
-#  name: "{{ cephfs_metadata if cephfs_metadata is defined else 'cephfs_metadata' }}"
-#  pg_num: "{{ osd_pool_default_pg_num }}"
-#  pgp_num: "{{ osd_pool_default_pg_num }}"
-#  rule_name: "replicated_rule"
-#  type: 1
-#  erasure_profile: ""
-#  expected_num_objects: ""
-#  application: "cephfs"
-#  size: "{{ osd_pool_default_size }}"
-#  min_size: "{{ osd_pool_default_min_size }}"
-#cephfs_pools:
-#  - "{{ cephfs_data_pool }}"
-#  - "{{ cephfs_metadata_pool }}"
+cephfs: cephfs # name of the ceph filesystem
+cephfs_data_pool:
+  name: "{{ cephfs_data if cephfs_data is defined else 'cephfs_data' }}"
+  pg_num: "{{ osd_pool_default_pg_num }}"
+  pgp_num: "{{ osd_pool_default_pg_num }}"
+  rule_name: "replicated_rule"
+  type: 1
+  erasure_profile: ""
+  expected_num_objects: ""
+  application: "cephfs"
+  size: "{{ osd_pool_default_size }}"
+  min_size: "{{ osd_pool_default_min_size }}"
+cephfs_metadata_pool:
+  name: "{{ cephfs_metadata if cephfs_metadata is defined else 'cephfs_metadata' }}"
+  pg_num: "{{ osd_pool_default_pg_num }}"
+  pgp_num: "{{ osd_pool_default_pg_num }}"
+  rule_name: "replicated_rule"
+  type: 1
+  erasure_profile: ""
+  expected_num_objects: ""
+  application: "cephfs"
+  size: "{{ osd_pool_default_size }}"
+  min_size: "{{ osd_pool_default_min_size }}"
+cephfs_pools:
+  - "{{ cephfs_data_pool }}"
+  - "{{ cephfs_metadata_pool }}"
 
 ## OSD options
 #
