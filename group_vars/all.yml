@@ -5,7 +5,7 @@
 
 # Dummy variable to avoid error because ansible does not recognize the
 # file as a good configuration file when no variable in it.
-dummy:
+#dummy:
 
 # You can override vars by using host or group vars
 
@@ -16,7 +16,7 @@ dummy:
 ######################################
 # Releases name to number dictionary #
 ######################################
-ceph_release_num:
+#ceph_release_num:
 #  dumpling: 0.67
 #  emperor: 0.72
 #  firefly: 0.80
@@ -27,7 +27,7 @@ ceph_release_num:
 #  kraken: 11
 #  luminous: 12
 #  mimic: 13
-  nautilus: 14
+#  nautilus: 14
 #  dev: 99
 
 # Directory to fetch cluster fsid, keys etc...
@@ -80,7 +80,7 @@ grafana_server_group_name: grafana-server
 ############
 # PACKAGES #
 ############
-debian_package_dependencies: []
+#debian_package_dependencies: []
 
 #centos_package_dependencies:
 #  - epel-release
@@ -95,7 +95,7 @@ debian_package_dependencies: []
 
 # Enable the ntp service by default to avoid clock skew on ceph nodes
 # Disable if an appropriate NTP client is already installed and configured
-ntp_service_enabled: True
+ntp_service_enabled: true
 
 # Set type of NTP client daemon to use, valid entries are chronyd, ntpd or timesyncd
 # Note that this selection is currently ignored on containerized deployments
