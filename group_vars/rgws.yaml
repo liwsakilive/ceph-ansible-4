@@ -1,0 +1,5 @@
+---
+radosgw_interface: ens3
+radosgw_resolve_cname: true # enable for radosgw to resolve DNS CNAME based bucket names
+radosgw_civetweb_port: 80
+radosgw_civetweb_num_threads: 100

@@ -1,0 +1,7 @@
+---
+osd_auto_discovery: false
+devices:
+  - '/dev/vdb'
+osd_scenario: lvm
+osd_mkfs_type: xfs
+osd_objectstore: bluestore
