@@ -287,7 +287,7 @@ configure_firewall: false
 
 monitor_address_block: "10.148.0.0/24"
 radosgw_address_block: "10.148.0.0/24"
-public_network: "10.148.0.0/24"
+public_network: "0.0.0.0"
 cluster_network: "10.148.0.0/24"
 
 #fsid: "{{ cluster_uuid.stdout }}"
