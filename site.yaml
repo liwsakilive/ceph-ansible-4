@@ -2,18 +2,18 @@
 # Defines deployment design and assigns role to server groups
 
 - hosts:
-  - mons
-  - osds
-  - mdss
-  - rgws
-  - nfss
-  - rbdmirrors
-  - clients
-  - mgrs
-  - iscsigws
-  - iscsi-gws # for backward compatibility only!
+#  - mons
+#  - osds
+#  - mdss
+#  - rgws
+#  - nfss
+#  - rbdmirrors
+#  - clients
+#  - mgrs
+#  - iscsigws
+#  - iscsi-gws # for backward compatibility only!
   - grafana-server
-  - rgwloadbalancers
+#  - rgwloadbalancers
 
   gather_facts: false
   any_errors_fatal: true
