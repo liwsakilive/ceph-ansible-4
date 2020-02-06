@@ -51,7 +51,7 @@ rgw_group_name: rgws
 mds_group_name: mdss
 nfs_group_name: nfss
 #rbdmirror_group_name: rbdmirrors
-#client_group_name: clients
+client_group_name: clients
 #iscsi_gw_group_name: iscsigws
 mgr_group_name: mgrs
 #rgwloadbalancer_group_name: rgwloadbalancers
