@@ -16,7 +16,7 @@
 ######################################
 # Releases name to number dictionary #
 ######################################
-#ceph_release_num:
+ceph_release_num:
 #  dumpling: 0.67
 #  emperor: 0.72
 #  firefly: 0.80
@@ -27,7 +27,7 @@
 #  kraken: 11
 #  luminous: 12
 #  mimic: 13
-#  nautilus: 14
+  nautilus: 14
 #  dev: 99
 
 # Directory to fetch cluster fsid, keys etc...
